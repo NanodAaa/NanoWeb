@@ -38,11 +38,9 @@ echo "Connect success!";
     <div>
         <h2>NAVIGATION</h2>
         <div>
-<!--             <a href="./NANOWEB/videos/video-page.php">VIDEO</a><br>
-            <a href="./NANOWEB/images/image-page.php">BOOK</a><br> -->
-            <form method="GET" action="image-page.php">
-            <a href=""></a>
-        </form>
+            <div><a href="index_new.php">NANOWEB</a></div>
+            <div><a href="index_new.php?page=video_page">VIDEO</a></div>
+            <div><a href="index_new.php?page=video_page">IMAGE</a></div>
         </div>
     </div>
 </body>
