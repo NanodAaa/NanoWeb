@@ -2,7 +2,7 @@
 $SERVER_NAME = 'localhost';
 $USERNAME = 'root';
 $PASSWORD = '';
-$DATABASE_NAME = 'nanoweb_db';
+$DATABASE_NAME = 'nanodb';
 
 function is_video($filepath) 
 {
