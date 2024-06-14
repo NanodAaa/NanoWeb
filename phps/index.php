@@ -38,8 +38,10 @@ echo "Connect success!";
     <div>
         <h2>NAVIGATION</h2>
         <div>
-<!--             <a href="./NANOWEB/videos/video-page.php">VIDEO</a><br>
-            <a href="./NANOWEB/images/image-page.php">BOOK</a><br> -->
+            <h3>OLD NAVIGATION:</h3>
+            <a href="../videos/video-page.php">VIDEO</a><br>
+            <a href="../images/image-page.php">BOOK</a><br>
+            <h3>NEW NAVIGATION:</h3>
             <form method="GET" action="image-page.php">
             <a href=""></a>
         </form>
