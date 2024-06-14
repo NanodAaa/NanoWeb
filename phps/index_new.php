@@ -5,7 +5,7 @@ $conn = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
 if ($conn->connect_error) {
     die("Connection failed!". $conn->connect_error);
 }
-echo "Connect success!";
+// echo "Connect success!";
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +16,9 @@ echo "Connect success!";
     <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <title>NanoWeb</title>
+
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="../webview/css/webview.css">
 </head>
 
 <!-- MAIN -->
@@ -25,24 +26,29 @@ echo "Connect success!";
     <h1 style="text-align: center;">NanoWeb</h1>
 
     <!-- SIGNIN BAR -->
-    <div class="signinBar">
-        <form action="./NanodAaa/account/sign-in.php" method="get">
+    <div class="signInBar">
+        <form action="./index_new.php" method="post">
             USERNAME: <input type="text" name="username">
             PASSWORD: <input type="password" name="password">
             <input type="submit" value="SIGN IN">     
-            <a href="./NANOWEB/account/sign-up.php">SIGN UP</a>  
+            <a href="./index_new.php?page=signup_page">SIGN UP</a>  
         </form>
     </div>
 
+    <?php
+
+    ?>
+
     <!-- NAVIGATION BAR -->
-    <div>
+    <div class="navigationBar">
         <h2>NAVIGATION</h2>
         <div>
             <div><a href="index_new.php">NANOWEB</a></div>
             <div><a href="index_new.php?page=video_page">VIDEO</a></div>
-            <div><a href="index_new.php?page=video_page">IMAGE</a></div>
+            <div><a href="index_new.php?page=manga_page">MANGA</a></div>
         </div>
     </div>
+
 </body>
 
 </html>

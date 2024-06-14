@@ -1,13 +1,12 @@
-.topTitle{
+.mainTitle{
     text-align: center;
 }
 
-.signinBar{
-    text-align: right;
+.signInBar{
+    text-align: center;
     padding: 12px 12px 12px 12px;
-    background-color: aqua
 }
 
 .navigationBar{
-    
+    text-align: left;
 }
