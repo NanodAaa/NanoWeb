@@ -35,10 +35,6 @@ if ($conn->connect_error) {
         </form>
     </div>
 
-    <?php
-
-    ?>
-
     <!-- NAVIGATION BAR -->
     <div class="navigationBar">
         <h2>NAVIGATION</h2>
@@ -52,6 +48,22 @@ if ($conn->connect_error) {
         </form>
         </div>
     </div>
+
+    <?php
+        switch ($_GET) {
+            case "signup_page":
+                break;
+            case "video_page":
+                break;
+            case "manga_page":
+                break;
+
+            
+            default:
+                break;
+        }
+
+    ?>
 
 </body>
 

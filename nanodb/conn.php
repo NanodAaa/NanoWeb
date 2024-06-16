@@ -1,6 +1,6 @@
 <?php
 
-include_once("../config/config.php");
+include "../include/header.php";
 
 class nanoSqlDB
 {
@@ -15,7 +15,7 @@ class nanoSqlDB
     // Connect Function
     public function connect()
     {
-        $this->conn = new mysqli(SERVER_NAME, USERNAME, PASSWORD, $this->dbname);
+        $this->conn = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $this->dbname);
     //    echo SERVER_NAME, USERNAME, PASSWORD, $this->dbname;
         if ($this->conn->connect_error) 
         {
