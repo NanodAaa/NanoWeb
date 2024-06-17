@@ -1,9 +1,4 @@
 <?php 
-$SERVER_NAME = 'localhost';
-$USERNAME = 'root';
-$PASSWORD = '';
-$DATABASE_NAME = 'nanoweb_db';
-
 function is_video($filepath) 
 {
     $videoExtention = array('mp4', 'avi', 'mkv', 'webm', 'flv');

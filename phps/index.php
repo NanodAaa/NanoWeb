@@ -1,12 +1,4 @@
-<?php
-include "../include/header.php";
-// Login to nanodb
-$conn = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
-if ($conn->connect_error) {
-    die("Connection failed!". $conn->connect_error);
-}
-// echo "Connect success!";
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -23,16 +15,42 @@ if ($conn->connect_error) {
 
 <!-- MAIN -->
 <body>
-    <h1 style="text-align: center;">NanoWeb</h1>
+    <div><h1 style="text-align: center;">NanoWeb</h1></div>
 
     <!-- SIGNIN BAR -->
     <div class="signInBar">
-        <form action="./index_new.php" method="post">
-            USERNAME: <input type="text" name="username">
-            PASSWORD: <input type="password" name="password">
-            <input type="submit" value="SIGN IN">     
-            <a href="./index_new.php?page=signup_page">SIGN UP</a>  
-        </form>
+        <!-- Juage the login statement -->
+        <?php if (isset($_SESSION["username"])) : ?>
+            <a href="#">Welcome! [<?php echo $_SESSION['username']; ?>]</a>
+            <a href="../phps/usersystem/logout.php">Logout</a>
+
+        <?php else: ?>
+            <form action="./index.php" method="get">
+                USERNAME: <input type="text" name="username">
+                PASSWORD: <input type="password" name="password">
+                <input type="submit" value="SIGN IN">     
+                <a href="../phps/usersystem/signup.php">SIGN UP</a>  
+            </form>
+
+            <?php
+            // Signin
+            include "../nanoweb_db/conn.php";
+            if ($_GET["username"] == '' || $_GET["password"] == ''){
+                echo ("Please input correct username or password!<br>");
+            }
+
+            $username = $_GET["username"];
+            $password = $_GET["password"];
+            $sql = "SELECT * FROM users WHERE username='$username' AND passwd='$password'";
+            $result = $conn->query($sql);
+            if (mysqli_num_rows($result)){
+                echo "Signin success!";
+                $_SESSION["username"] = $username;
+            } else {
+                echo ("Username or password incorrect!");
+            }
+            ?>
+        <?php endif ?>
     </div>
 
     <!-- NAVIGATION BAR -->
@@ -43,26 +61,15 @@ if ($conn->connect_error) {
             <a href="../videos/video-page.php">VIDEO</a><br>
             <a href="../images/image-page.php">BOOK</a><br>
             <h3>NEW NAVIGATION:</h3>
-            <form method="GET" action="image-page.php">
-            <a href=""></a>
+            <a href="./index.php">NANOWEB</a><br>
+            <a href="./index.php?page=video_page">VIDEO</a><br>
+            <a href="./index.php?page=manga_page">MANGA</a><br>
         </form>
         </div>
     </div>
 
     <?php
-        switch ($_GET) {
-            case "signup_page":
-                break;
-            case "video_page":
-                break;
-            case "manga_page":
-                break;
-
-            
-            default:
-                break;
-        }
-
+        echo $_GET["page"];
     ?>
 
 </body>
