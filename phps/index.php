@@ -20,40 +20,53 @@
     <!-- SIGNIN BAR -->
     <div class="signInBar">
         <!-- Juage the login statement -->
+        <!-- Logined -->
         <?php if (isset($_SESSION["username"])) : ?>
             <a href="#">Welcome! [<?php echo $_SESSION['username']; ?>]</a>
-            <a href="../phps/usersystem/logout.php">Logout</a>
+            <a href="./index.php?logout=true">Logout</a>
+            <?php
+            if (isset($_GET["logout"])){
+                unset($_SESSION["username"]);
+                echo("Logout success!");
+                unset($_GET["logout"]);
+                header("Refresh: 1");
+            }
+            ?>
 
+        <!-- Unlogined -->
         <?php else: ?>
             <form action="./index.php" method="get">
                 USERNAME: <input type="text" name="username">
                 PASSWORD: <input type="password" name="password">
                 <input type="submit" value="SIGN IN">     
                 <a href="../phps/usersystem/signup.php">SIGN UP</a>  
+                <a href="./index.php">NANOWEB</a>
             </form>
 
+            <!-- Signin -->
             <?php
-            // Signin
             include "../nanoweb_db/conn.php";
-            if ($_GET["username"] == '' || $_GET["password"] == ''){
-                echo ("Please input correct username or password!<br>");
-            }
-
-            $username = $_GET["username"];
-            $password = $_GET["password"];
-            $sql = "SELECT * FROM users WHERE username='$username' AND passwd='$password'";
-            $result = $conn->query($sql);
-            if (mysqli_num_rows($result)){
-                echo "Signin success!";
-                $_SESSION["username"] = $username;
+            if (!isset($_GET["username"]) || !isset($_GET["password"])){
+                echo("Please input username and password.<br>");
             } else {
-                echo ("Username or password incorrect!");
+                $username = $_GET["username"];
+                $password = $_GET["password"];
+                $sql = "SELECT * FROM users WHERE username='$username' AND passwd='$password'";
+                $result = $conn->query($sql);
+                if (mysqli_num_rows($result)){
+                    //    echo "Signin success!";
+                    $_SESSION["username"] = $username;
+                    echo("Signin success!");
+                    header("Refresh: 1");
+                } else {
+                    echo ("Username or password incorrect!");
+                }
             }
             ?>
         <?php endif ?>
     </div>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR  -->
     <div class="navigationBar">
         <h2>NAVIGATION</h2>
         <div>
@@ -67,10 +80,7 @@
         </form>
         </div>
     </div>
-
-    <?php
-        echo $_GET["page"];
-    ?>
+   
 
 </body>
 
