@@ -6,7 +6,8 @@
 - 完成了漫画站的搜索和浏览功能的开发
 - 完成了视频站的数据库建设
 - 完成了视频站的搜索和浏览功能的开发
-![f12f5e41abac238ac61976a2e70f831](https://github.com/NanodAaa/NanoWeb/assets/102843392/44aa2e52-6661-4fce-a1bf-0c7e1c294537)
+![image](https://github.com/NanodAaa/NanoWeb/assets/102843392/49a2b314-3e3a-44d7-b10d-790e4a8d9978)
+
 
 ## 当前目标:
 - 进行总站的用户注册和个人资料系统开发
