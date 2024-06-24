@@ -1,0 +1,49 @@
+.signInBar {
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+
+.signInBar a {
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+
+.searchBar {
+    display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+}
+
+.searchBar input {
+    width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.searchBar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    margin-left: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}

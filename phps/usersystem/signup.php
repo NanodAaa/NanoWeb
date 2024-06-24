@@ -23,7 +23,7 @@
 </body>
 
 <?php
-include "../../nanoweb_db/conn.php";
+include "../nanoweb_db/conn.php";
 
 if (!isset($_GET["username"]) || empty($_GET["username"]) || !isset($_GET["password"]) || empty($_GET["password"])) {
     die("<h3 style='text-align: center'>Please input username and password!</h3>");
