@@ -15,8 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<!-- MAIN -->
-
 <body class="body">
     <div class="logo">
         <h1 class="mainTitle"><a href="./index.php">NanoWeb</a></h1>
@@ -27,8 +25,8 @@
         <!-- Juage the login statement -->
         <!-- Logined -->
         <?php if (isset($_SESSION["username"])): ?>
-            <h2><a href="./index.php?page=user">Welcome! [<?php echo $_SESSION['username']; ?>]</a> <a
-                    href="./index.php?logout=true">Logout</a>
+            <h2><a href="./index.php?page=user">Welcome! [<?php echo $_SESSION['username']; ?>]</a>
+                <a href="./index.php?logout=true">Logout</a>
             </h2>
             <!-- Logout -->
             <?php
@@ -147,11 +145,23 @@
                 <!-- USER PAGE -->
                 <div>
                     <h1>USER PAGE -- <?php echo ($_SESSION["username"]) ?></h1>
+
+                    <!-- SERVER ADMIN SETTING -->
+                    <?php if ($_SESSION["username"] == "admin"): ?>
+                        <h2>ADMIN SETTING:</h2>
+                        <h3><a href="#">Upload Video</a></h3>
+
+                    <?php else: ?>
+                        <!-- FAVOURITE VIDEOS -->
+                        <div>
+                            <h2>FAVOURITE VIDEOS:</h1>
+                        </div>
+
+                    <?php endif ?>
+
                 </div>
-                <!-- FAVOURITE VIDEOS -->
-                <div>
-                    <h1>FAVOURITE VIDEOS:</h1>
-                </div>
+
+
 
             <?php endif ?>
 

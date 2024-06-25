@@ -1,4 +1,9 @@
 <?php 
+
+/* Admin */
+$ADMIN_USERNAME = "admin";
+$ADMIN_PASSWORD = "123456";
+
 function is_video($filepath) 
 {
     $videoExtention = array('mp4', 'avi', 'mkv', 'webm', 'flv');
