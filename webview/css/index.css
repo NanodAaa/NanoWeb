@@ -1,19 +1,28 @@
 .signInBar {
-    color: #333;
+    color: #f4f4f4;
     text-align: center;
     text-decoration: none;
 }
 
 .signInBar a {
-    color: #333;
+    color: #f4f4f4;
     text-align: center;
     text-decoration: none;
 }
 
+.box {
+    max-width: 1200px;
+    padding: 1rem;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .searchBar {
     display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background-color: #333;
 }
 
 .searchBar input {
@@ -26,24 +35,36 @@
 .searchBar button {
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #333;
+    background-color: #ccc;
     color: #fff;
     border-radius: 4px;
     margin-left: 1rem;
 }
 
-table {
+.infobar {
+    background-color: black;
+}
+.infobar table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
 }
-table, th, td {
-    border: 1px solid #ccc;
+
+.infobar a {
+    color: #f4f4f4;
+    text-decoration: none;
 }
-th, td {
+
+.infobar th {
+    background-color: black;
+}
+
+.infobar th, td {
     padding: 1rem;
     text-align: left;
 }
-th {
-    background-color: #f4f4f4;
+
+.infobar table th td tr {
+    border: 1px solid #ccc;
+    background-color: black;
 }

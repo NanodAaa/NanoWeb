@@ -16,69 +16,72 @@
 </head>
 
 <body class="body">
-    <div class="logo">
-        <h1 class="mainTitle"><a href="./index.php">NanoWeb</a></h1>
-    </div>
-
-    <!-- SIGNIN BAR -->
-    <div class="signInBar">
-        <!-- Juage the login statement -->
-        <!-- Logined -->
-        <?php if (isset($_SESSION["username"])): ?>
-            <h2><a href="./index.php?page=user">Welcome! [<?php echo $_SESSION['username']; ?>]</a>
-                <a href="./index.php?logout=true">Logout</a>
-            </h2>
-            <!-- Logout -->
-            <?php
-            if (isset($_GET["logout"])) {
-                unset($_SESSION["username"]);
-                echo ("Logout success!");
-                unset($_GET["logout"]);
-                header("Refresh: 0");
-            }
-            ?>
-
-        <?php else: ?>
-            <!-- Unlogined -->
-            <!-- SignUp -->
-            <form action="#" method="get">
-                USERNAME: <input type="text" name="username">
-                PASSWORD: <input type="password" name="password">
-                <input type="submit" value="SIGN IN">
-                <a href="../phps/usersystem/signup.php">SIGN UP</a>
-            </form>
-
-            <!-- SignIn -->
-            <?php
-            if (!isset($_GET["username"]) || empty($_GET["username"]) || !isset($_GET["password"]) || empty($_GET["password"])) {
-                //    echo("Please input username and password.<br>");
-            } else {
-                include "./nanoweb_db/conn.php";
-                $username = $_GET["username"];
-                $password = $_GET["password"];
-                $sql = "SELECT * FROM users WHERE username='$username' AND passwd='$password'";
-                $result = $conn->query($sql);
-                if (mysqli_num_rows($result)) {
-                    //    echo "Signin success!";
-                    $_SESSION["username"] = $username;
-                    echo ("Signin success!");
-                    header("Refresh: 0");
-                } else {
-                    echo ("Username or password incorrect!");
-                }
-                $conn->close();
-            }
-            ?>
-        <?php endif ?>
-    </div>
-
-    <!-- NAVIGATION -->
-    <div class="navigationBar">
-        <h3>NAVIGATION: <a href="./index.php?page=video">VIDEO</a> <a href="./index.php?page=manga">MANGA</a></h3>
-    </div>
-
     <!-- CONTAINER -->
-    <div class="container">
+    <div class="box">
+        <!-- LOGO -->
+        <div class="logo">
+            <h1 class="mainTitle"><a href="./index.php">NanoWeb</a></h1>
+        </div>
+
+        <!-- SIGNIN BAR -->
+        <div class="signInBar">
+            <!-- Juage the login statement -->
+            <!-- Logined -->
+            <?php if (isset($_SESSION["username"])): ?>
+                <h2><a href="./index.php?page=user">Welcome! [<?php echo $_SESSION['username']; ?>]</a>
+                    <a href="./index.php?logout=true">Logout</a>
+                </h2>
+                <!-- Logout -->
+                <?php
+                if (isset($_GET["logout"])) {
+                    unset($_SESSION["username"]);
+                    echo ("Logout success!");
+                    unset($_GET["logout"]);
+                    header("Refresh: 0");
+                }
+                ?>
+
+            <?php else: ?>
+                <!-- Unlogined -->
+                <!-- SignUp -->
+                <form action="#" method="get">
+                    USERNAME: <input type="text" name="username">
+                    PASSWORD: <input type="password" name="password">
+                    <input type="submit" value="SIGN IN">
+                    <a href="../phps/usersystem/signup.php">SIGN UP</a>
+                </form>
+
+                <!-- SignIn -->
+                <?php
+                if (!isset($_GET["username"]) || empty($_GET["username"]) || !isset($_GET["password"]) || empty($_GET["password"])) {
+                    //    echo("Please input username and password.<br>");
+                } else {
+                    include "./nanoweb_db/conn.php";
+                    $username = $_GET["username"];
+                    $password = $_GET["password"];
+                    $sql = "SELECT * FROM users WHERE username='$username' AND passwd='$password'";
+                    $result = $conn->query($sql);
+                    if (mysqli_num_rows($result)) {
+                        //    echo "Signin success!";
+                        $_SESSION["username"] = $username;
+                        echo ("Signin success!");
+                        header("Refresh: 0");
+                    } else {
+                        echo ("Username or password incorrect!");
+                    }
+                    $conn->close();
+                }
+                ?>
+            <?php endif ?>
+        </div>
+        <!-- NAVIGATION -->
+        <div class="navigation-container">
+            <h3>NAVIGATION: <a href="./index.php?page=video">VIDEO</a>
+                <a href="./index.php?page=manga">MANGA</a>
+                <a href="./test.php">TEST</a>
+            </h3>
+        </div>
+
         <?php if (isset($_GET["page"])): ?>
             <?php if ($_GET["page"] == "video"): ?>
                 <!-- VIDEO PAGE -->
@@ -98,7 +101,7 @@
                 </div>
 
                 <!-- INFO BAR -->
-                <div>
+                <div class="infobar">
                     <?php
                     include "./nanoweb_db/conn.php";
                     if (!isset($_GET["query"]) || empty($_GET["query"])) {
@@ -149,7 +152,7 @@
                     <!-- SERVER ADMIN SETTING -->
                     <?php if ($_SESSION["username"] == "admin"): ?>
                         <h2>ADMIN SETTING:</h2>
-                        <h3><a href="#">Upload Video</a></h3>
+                        <h3><a href="./admin/admin_terminal.php">Admin Terminal</a></h3>
 
                     <?php else: ?>
                         <!-- FAVOURITE VIDEOS -->

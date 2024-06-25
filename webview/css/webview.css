@@ -1,41 +1,32 @@
 .body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000;
 }
 
 .logo {
-    color: #333;
+    color: #fff;
     padding: 1rem;
     text-align: center;
 }
 
 .logo a {
-    color: #333;
+    color: #fff;
     padding: 1rem;
     text-align: center;
     text-decoration: none;
 }
 
 .navigation-container {
-    color: #333;
-    padding: 1rem;
+    color: #ccc;
+    background-color: #333;
     text-align: center;
 }
 .navigation-container a {
-    color: #333;
+    color: #f4f4f4;
     margin: 0 1rem;
     text-decoration: none;
-}
-
-
-.container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .signUpBar {
