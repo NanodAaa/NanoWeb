@@ -1,3 +1,16 @@
+.logo {
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.logo a {
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
 .video-container {
     max-width: 800px;
     margin: 0 auto;

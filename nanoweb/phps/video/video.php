@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $videoName = $row["video_name"];
     $videoCollection = $row["video_collection"];
-    $videoTag = $row["video_tag"];
+    $videoTags = $row["video_tags"];
     $videoFilename = $row["video_filename"];
 }
 $conn->close();
@@ -54,7 +54,7 @@ $conn->close();
             <?php echo ($videoName); ?><br>
             Collection: <?php echo ($videoCollection); ?><br>
             ID: <?php echo ($vid); ?><br>
-            TAG: <?php echo ($videoTag); ?><br>
+            TAG: <?php echo ($videoTags); ?><br>
         </h1>
 
     </div>

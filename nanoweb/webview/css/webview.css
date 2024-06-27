@@ -5,19 +5,6 @@
     background-color: #000;
 }
 
-.logo {
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-.logo a {
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-}
-
 .navigation-container {
     color: #ccc;
     background-color: #333;

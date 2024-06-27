@@ -90,14 +90,12 @@
                 </div>
 
                 <!-- SEARCH BAR -->
-                <div class="searchBar">
-                    <div>
-                        <form method="GET" action="#">
-                            <input type="hidden" name="page" value="video">
-                            <input type="text" name="query" placeholder="search">
-                            <button type="submit">SEARCH</button>
-                        </form>
-                    </div>
+                <div class="searchbar">
+                    <form method="GET" action="#">
+                        <input type="hidden" name="page" value="video">
+                        <input type="text" name="query" placeholder="search">
+                        <button type="submit">SEARCH</button>
+                    </form>
                 </div>
 
                 <!-- INFO BAR -->
@@ -173,6 +171,14 @@
             <div>
                 <h1>WELCOME TO NANOWEB!</h1>
             </div>
+
+            <div style="text-align:center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m5Mr9CkXp0k?si=JfimxWRcgVjtKmUP"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
 
         <?php endif ?>
     </div>
